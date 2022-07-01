@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32510.428
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "Projet BI Nana Anicet", "Projet BI Nana Anicet\Projet BI Nana Anicet.dtproj", "{EF6863AA-AA87-48DB-B7E5-B8B031A3078B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF6863AA-AA87-48DB-B7E5-B8B031A3078B}.Development|Default.ActiveCfg = Development
+		{EF6863AA-AA87-48DB-B7E5-B8B031A3078B}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B17F233E-2882-4847-8C95-9C0D23D96806}
+	EndGlobalSection
+EndGlobal

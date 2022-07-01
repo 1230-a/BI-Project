@@ -1,0 +1,850 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/30/2022 5:31:05 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-FV40EEG"
+  DTS:CreatorName="DESKTOP-FV40EEG\Nana"
+  DTS:DTSID="{170C732A-41F9-45CF-8577-F00EAA3C970A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.521.0"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{0919BAED-5EDF-4374-9C8A-F9024CBF08B1}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{20ADC2F5-5AF8-4851-BE42-DBB2DD5743D9}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1036"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="D:\3ème année Hexagone\3BI\Projet\Data\Calls data\Data 2019.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CallTimestamp"
+              DTS:DTSID="{A70CF8A6-CD2E-4634-B0BB-3AD93E371401}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Call Type"
+              DTS:DTSID="{62348C1F-0905-4AAF-9486-3F6E0B1098B0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmployeeID"
+              DTS:DTSID="{2A108D18-96AF-4F7E-B886-6D8D2A51DD28}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CallDuration"
+              DTS:DTSID="{F7A2F764-6A97-4C16-BDF5-D971F74D6122}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="WaitTime"
+              DTS:DTSID="{A9FFB13E-4A62-438F-800C-F2FA48ED4E44}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CallAbandoned"
+              DTS:DTSID="{EEE6AEC0-BECF-45DE-B087-DA0F111C5D2F}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT - Load into STA Data2019"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{1613101F-4133-49CB-A36A-EAD780DB5687}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT - Load into STA Data2019"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT - Load into STA Data2019\DCNV-To Unicode"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Conversion de données;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Conversion de données"
+              name="DCNV-To Unicode"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Inputs[Entrée de conversion de données]"
+                  name="Entrée de conversion de données">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Inputs[Entrée de conversion de données].Columns[CallTimestamp]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CallTimestamp"
+                      lineageId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].Columns[CallTimestamp]" />
+                    <inputColumn
+                      refId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Inputs[Entrée de conversion de données].Columns[Call Type]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Call Type"
+                      lineageId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].Columns[Call Type]" />
+                    <inputColumn
+                      refId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Inputs[Entrée de conversion de données].Columns[EmployeeID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EmployeeID"
+                      lineageId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].Columns[EmployeeID]" />
+                    <inputColumn
+                      refId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Inputs[Entrée de conversion de données].Columns[CallDuration]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CallDuration"
+                      lineageId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].Columns[CallDuration]" />
+                    <inputColumn
+                      refId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Inputs[Entrée de conversion de données].Columns[WaitTime]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="WaitTime"
+                      lineageId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].Columns[WaitTime]" />
+                    <inputColumn
+                      refId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Inputs[Entrée de conversion de données].Columns[CallAbandoned]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CallAbandoned"
+                      lineageId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].Columns[CallAbandoned]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Outputs[Sortie de conversion de données]"
+                  exclusionGroup="1"
+                  name="Sortie de conversion de données"
+                  synchronousInputId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Inputs[Entrée de conversion de données]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Outputs[Sortie de conversion de données].Columns[CallTimestamp_U]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Outputs[Sortie de conversion de données].Columns[CallTimestamp_U]"
+                      name="CallTimestamp_U"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].Columns[CallTimestamp]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Outputs[Sortie de conversion de données].Columns[Call Type_U]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Outputs[Sortie de conversion de données].Columns[Call Type_U]"
+                      name="Call Type_U"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].Columns[Call Type]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Outputs[Sortie de conversion de données].Columns[EmployeeID_U]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Outputs[Sortie de conversion de données].Columns[EmployeeID_U]"
+                      name="EmployeeID_U"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].Columns[EmployeeID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Outputs[Sortie de conversion de données].Columns[CallDuration_U]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Outputs[Sortie de conversion de données].Columns[CallDuration_U]"
+                      name="CallDuration_U"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].Columns[CallDuration]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Outputs[Sortie de conversion de données].Columns[WaitTime_U]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Outputs[Sortie de conversion de données].Columns[WaitTime_U]"
+                      name="WaitTime_U"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].Columns[WaitTime]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Outputs[Sortie de conversion de données].Columns[CallAbandoned_U]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Outputs[Sortie de conversion de données].Columns[CallAbandoned_U]"
+                      name="CallAbandoned_U"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].Columns[CallAbandoned]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Outputs[Sortie d'erreur de conversion de données]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de conversion de données"
+                  synchronousInputId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Inputs[Entrée de conversion de données]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Load into STA Data2019\FF - Data2019"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Source du fichier plat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Source du fichier plat"
+              localeId="1036"
+              name="FF - Data2019"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Spécifie si les colonnes dont la longueur est zéro sont traitées comme des valeurs NULL."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom d'une colonne de sortie contenant le nom du fichier. Si aucun nom n'est spécifié, aucune colonne de sortie contenant le nom du fichier ne sera générée."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - Load into STA Data2019\FF - Data2019.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat]"
+                  name="Sortie de source de fichier plat">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].Columns[CallTimestamp]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].ExternalColumns[CallTimestamp]"
+                      length="50"
+                      lineageId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].Columns[CallTimestamp]"
+                      name="CallTimestamp"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].Columns[Call Type]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].ExternalColumns[Call Type]"
+                      length="50"
+                      lineageId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].Columns[Call Type]"
+                      name="Call Type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].Columns[EmployeeID]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].ExternalColumns[EmployeeID]"
+                      length="50"
+                      lineageId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].Columns[EmployeeID]"
+                      name="EmployeeID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].Columns[CallDuration]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].ExternalColumns[CallDuration]"
+                      length="50"
+                      lineageId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].Columns[CallDuration]"
+                      name="CallDuration"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].Columns[WaitTime]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].ExternalColumns[WaitTime]"
+                      length="50"
+                      lineageId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].Columns[WaitTime]"
+                      name="WaitTime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].Columns[CallAbandoned]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].ExternalColumns[CallAbandoned]"
+                      length="50"
+                      lineageId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].Columns[CallAbandoned]"
+                      name="CallAbandoned"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].ExternalColumns[CallTimestamp]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="CallTimestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].ExternalColumns[Call Type]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Call Type" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].ExternalColumns[EmployeeID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="EmployeeID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].ExternalColumns[CallDuration]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="CallDuration" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].ExternalColumns[WaitTime]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="WaitTime" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat].ExternalColumns[CallAbandoned]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="CallAbandoned" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie d'erreur de source de fichier plat]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source de fichier plat">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Colonne de sortie d'erreur de source de fichier plat"
+                      lineageId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                      name="Colonne de sortie d'erreur de source de fichier plat" />
+                    <outputColumn
+                      refId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="OLE_DST - STA Data2019"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[Data2019]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019.Connections[OleDbConnection]"
+                  connectionManagerID="{0074BEC4-D87B-4EF4-B5A5-F2F090B2E7BA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[STA]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019.Inputs[Entrée de destination OLE DB].Columns[CallTimestamp_U]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CallTimestamp_U"
+                      externalMetadataColumnId="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019.Inputs[Entrée de destination OLE DB].ExternalColumns[CallTimestamp]"
+                      lineageId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Outputs[Sortie de conversion de données].Columns[CallTimestamp_U]" />
+                    <inputColumn
+                      refId="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019.Inputs[Entrée de destination OLE DB].Columns[Call Type_U]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Call Type_U"
+                      externalMetadataColumnId="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019.Inputs[Entrée de destination OLE DB].ExternalColumns[Call Type]"
+                      lineageId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Outputs[Sortie de conversion de données].Columns[Call Type_U]" />
+                    <inputColumn
+                      refId="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019.Inputs[Entrée de destination OLE DB].Columns[EmployeeID_U]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EmployeeID_U"
+                      externalMetadataColumnId="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019.Inputs[Entrée de destination OLE DB].ExternalColumns[EmployeeID]"
+                      lineageId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Outputs[Sortie de conversion de données].Columns[EmployeeID_U]" />
+                    <inputColumn
+                      refId="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019.Inputs[Entrée de destination OLE DB].Columns[CallDuration_U]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CallDuration_U"
+                      externalMetadataColumnId="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019.Inputs[Entrée de destination OLE DB].ExternalColumns[CallDuration]"
+                      lineageId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Outputs[Sortie de conversion de données].Columns[CallDuration_U]" />
+                    <inputColumn
+                      refId="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019.Inputs[Entrée de destination OLE DB].Columns[WaitTime_U]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="WaitTime_U"
+                      externalMetadataColumnId="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019.Inputs[Entrée de destination OLE DB].ExternalColumns[WaitTime]"
+                      lineageId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Outputs[Sortie de conversion de données].Columns[WaitTime_U]" />
+                    <inputColumn
+                      refId="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019.Inputs[Entrée de destination OLE DB].Columns[CallAbandoned_U]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CallAbandoned_U"
+                      externalMetadataColumnId="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019.Inputs[Entrée de destination OLE DB].ExternalColumns[CallAbandoned]"
+                      lineageId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Outputs[Sortie de conversion de données].Columns[CallAbandoned_U]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019.Inputs[Entrée de destination OLE DB].ExternalColumns[CallTimestamp]"
+                      dataType="wstr"
+                      length="50"
+                      name="CallTimestamp" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019.Inputs[Entrée de destination OLE DB].ExternalColumns[Call Type]"
+                      dataType="wstr"
+                      length="50"
+                      name="Call Type" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019.Inputs[Entrée de destination OLE DB].ExternalColumns[EmployeeID]"
+                      dataType="wstr"
+                      length="50"
+                      name="EmployeeID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019.Inputs[Entrée de destination OLE DB].ExternalColumns[CallDuration]"
+                      dataType="wstr"
+                      length="50"
+                      name="CallDuration" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019.Inputs[Entrée de destination OLE DB].ExternalColumns[WaitTime]"
+                      dataType="wstr"
+                      length="50"
+                      name="WaitTime" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019.Inputs[Entrée de destination OLE DB].ExternalColumns[CallAbandoned]"
+                      dataType="wstr"
+                      length="50"
+                      name="CallAbandoned" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT - Load into STA Data2019.Paths[Sortie de conversion de données]"
+              endId="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de conversion de données"
+              startId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Outputs[Sortie de conversion de données]" />
+            <path
+              refId="Package\DFT - Load into STA Data2019.Paths[Sortie de source de fichier plat]"
+              endId="Package\DFT - Load into STA Data2019\DCNV-To Unicode.Inputs[Entrée de conversion de données]"
+              name="Sortie de source de fichier plat"
+              startId="Package\DFT - Load into STA Data2019\FF - Data2019.Outputs[Sortie de source de fichier plat]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="220.8,41.6"
+          Id="Package\DFT - Load into STA Data2019"
+          TopLeft="141.666661037339,80.6000006405513" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT - Load into STA Data2019">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="144.8,41.6"
+          Id="Package\DFT - Load into STA Data2019\FF - Data2019"
+          TopLeft="448.333315518168,54.6000004339218" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\DFT - Load into STA Data2019\DCNV-To Unicode"
+          TopLeft="439.166649215752,191.533334855504" />
+        <NodeLayout
+          Size="203.2,41.6"
+          Id="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019"
+          TopLeft="420.83331661092,349.266669442389" />
+        <EdgeLayout
+          Id="Package\DFT - Load into STA Data2019.Paths[Sortie de source de fichier plat]"
+          TopLeft="521.14998236696,96.2000004339218">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,95.3333344215818"
+              Start="0,0"
+              End="0,87.8333344215818">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,87.8333344215818" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Load into STA Data2019.Paths[Sortie de conversion de données]"
+          TopLeft="521.999982913336,233.133334855504">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,116.133334586885"
+              Start="0,0"
+              End="0,108.633334586885">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,108.633334586885" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Load into STA Data2019\OLE_DST - STA Data2019">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
