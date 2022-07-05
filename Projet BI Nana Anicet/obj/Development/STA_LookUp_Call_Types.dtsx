@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{F8AAB7E3-5E51-4968-AF2F-38315DD60604}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{8917D032-DA74-4AAD-B2B9-1C00AD70BFA8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -31,82 +31,6 @@
         <pipeline
           version="1">
           <components>
-            <component
-              refId="Package\DFT - Load into STA Look Up Call Types\DNCV - To Unicode"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Conversion de données;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
-              description="Conversion de données"
-              name="DNCV - To Unicode"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\DFT - Load into STA Look Up Call Types\DNCV - To Unicode.Inputs[Entrée de conversion de données]"
-                  name="Entrée de conversion de données">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\DFT - Load into STA Look Up Call Types\DNCV - To Unicode.Inputs[Entrée de conversion de données].Columns[CallTypeID]"
-                      cachedDataType="r8"
-                      cachedName="CallTypeID"
-                      lineageId="Package\DFT - Load into STA Look Up Call Types\EX_SRC - Look Up Call Types.Outputs[Sortie de source Excel].Columns[CallTypeID]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\DFT - Load into STA Look Up Call Types\DNCV - To Unicode.Outputs[Sortie de conversion de données]"
-                  exclusionGroup="1"
-                  name="Sortie de conversion de données"
-                  synchronousInputId="Package\DFT - Load into STA Look Up Call Types\DNCV - To Unicode.Inputs[Entrée de conversion de données]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT - Load into STA Look Up Call Types\DNCV - To Unicode.Outputs[Sortie de conversion de données].Columns[CallTypeID_Uni]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="50"
-                      lineageId="Package\DFT - Load into STA Look Up Call Types\DNCV - To Unicode.Outputs[Sortie de conversion de données].Columns[CallTypeID_Uni]"
-                      name="CallTypeID_Uni"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
-                          name="SourceInputColumnLineageID">#{Package\DFT - Load into STA Look Up Call Types\EX_SRC - Look Up Call Types.Outputs[Sortie de source Excel].Columns[CallTypeID]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\DFT - Load into STA Look Up Call Types\DNCV - To Unicode.Outputs[Sortie d'erreur de conversion de données]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Sortie d'erreur de conversion de données"
-                  synchronousInputId="Package\DFT - Load into STA Look Up Call Types\DNCV - To Unicode.Inputs[Entrée de conversion de données]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT - Load into STA Look Up Call Types\DNCV - To Unicode.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\DFT - Load into STA Look Up Call Types\DNCV - To Unicode.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\DFT - Load into STA Look Up Call Types\DNCV - To Unicode.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\DFT - Load into STA Look Up Call Types\DNCV - To Unicode.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
             <component
               refId="Package\DFT - Load into STA Look Up Call Types\EX_SRC - Look Up Call Types"
               componentClassID="Microsoft.ExcelSource"
@@ -242,7 +166,7 @@
                 <property
                   dataType="System.String"
                   description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
-                  name="OpenRowset">[CallTypes]</property>
+                  name="OpenRowset">[Call_Types]</property>
                 <property
                   dataType="System.String"
                   description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
@@ -306,12 +230,11 @@
                       externalMetadataColumnId="Package\DFT - Load into STA Look Up Call Types\OLE_DST - STA Look Up Call Types.Inputs[Entrée de destination OLE DB].ExternalColumns[CallTypeLabel]"
                       lineageId="Package\DFT - Load into STA Look Up Call Types\EX_SRC - Look Up Call Types.Outputs[Sortie de source Excel].Columns[CallTypeLabel]" />
                     <inputColumn
-                      refId="Package\DFT - Load into STA Look Up Call Types\OLE_DST - STA Look Up Call Types.Inputs[Entrée de destination OLE DB].Columns[CallTypeID_Uni]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="CallTypeID_Uni"
+                      refId="Package\DFT - Load into STA Look Up Call Types\OLE_DST - STA Look Up Call Types.Inputs[Entrée de destination OLE DB].Columns[CallTypeID]"
+                      cachedDataType="r8"
+                      cachedName="CallTypeID"
                       externalMetadataColumnId="Package\DFT - Load into STA Look Up Call Types\OLE_DST - STA Look Up Call Types.Inputs[Entrée de destination OLE DB].ExternalColumns[CallTypeID]"
-                      lineageId="Package\DFT - Load into STA Look Up Call Types\DNCV - To Unicode.Outputs[Sortie de conversion de données].Columns[CallTypeID_Uni]" />
+                      lineageId="Package\DFT - Load into STA Look Up Call Types\EX_SRC - Look Up Call Types.Outputs[Sortie de source Excel].Columns[CallTypeID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -323,7 +246,7 @@
                     <externalMetadataColumn
                       refId="Package\DFT - Load into STA Look Up Call Types\OLE_DST - STA Look Up Call Types.Inputs[Entrée de destination OLE DB].ExternalColumns[CallTypeID]"
                       dataType="wstr"
-                      length="50"
+                      length="255"
                       name="CallTypeID" />
                   </externalMetadataColumns>
                 </input>
@@ -356,13 +279,8 @@
           </components>
           <paths>
             <path
-              refId="Package\DFT - Load into STA Look Up Call Types.Paths[Sortie de conversion de données]"
-              endId="Package\DFT - Load into STA Look Up Call Types\OLE_DST - STA Look Up Call Types.Inputs[Entrée de destination OLE DB]"
-              name="Sortie de conversion de données"
-              startId="Package\DFT - Load into STA Look Up Call Types\DNCV - To Unicode.Outputs[Sortie de conversion de données]" />
-            <path
               refId="Package\DFT - Load into STA Look Up Call Types.Paths[Sortie de source Excel]"
-              endId="Package\DFT - Load into STA Look Up Call Types\DNCV - To Unicode.Inputs[Entrée de conversion de données]"
+              endId="Package\DFT - Load into STA Look Up Call Types\OLE_DST - STA Look Up Call Types.Inputs[Entrée de destination OLE DB]"
               name="Sortie de source Excel"
               startId="Package\DFT - Load into STA Look Up Call Types\EX_SRC - Look Up Call Types.Outputs[Sortie de source Excel]" />
           </paths>
@@ -385,7 +303,7 @@
         <NodeLayout
           Size="266.4,41.6"
           Id="Package\DFT - Load into STA Look Up Call Types"
-          TopLeft="478.333314326075,83.2000006612142" />
+          TopLeft="476.666647725636,85.8000006818772" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -393,67 +311,29 @@
     design-time-name="Package\DFT - Load into STA Look Up Call Types">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="219.2,41.6"
           Id="Package\DFT - Load into STA Look Up Call Types\EX_SRC - Look Up Call Types"
-          TopLeft="355.833319193787,94.4666674174203" />
+          TopLeft="359.999985694886,95.3333340909746" />
         <NodeLayout
           Size="248,41.6"
           Id="Package\DFT - Load into STA Look Up Call Types\OLE_DST - STA Look Up Call Types"
-          TopLeft="344.999986290932,266.933335454729" />
-        <NodeLayout
-          Size="169.6,41.6"
-          Id="Package\DFT - Load into STA Look Up Call Types\DNCV - To Unicode"
-          TopLeft="374.99998509884,180.266668099298" />
+          TopLeft="350.83331939247,215.800001715024" />
         <EdgeLayout
           Id="Package\DFT - Load into STA Look Up Call Types.Paths[Sortie de source Excel]"
-          TopLeft="462.616652146314,136.06666741742">
+          TopLeft="472.216652543678,136.933334090975">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,44.2000006818772"
+              EndConnector="0,78.8666676240497"
               Start="0,0"
-              End="0,36.7000006818772">
+              End="0,71.3666676240497">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.7000006818772" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Load into STA Look Up Call Types.Paths[Sortie de conversion de données]"
-          TopLeft="459.79998509884,221.866668099297">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="9.2000011920926,45.0666673554314"
-              Start="0,0"
-              End="9.2000011920926,37.5666673554314">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.5333336777157" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.5333336777157"
-                    Point2="0,22.5333336777157"
-                    Point3="4,22.5333336777157" />
-                  <mssgle:LineSegment
-                    End="5.2000011920926,22.5333336777157" />
-                  <mssgle:CubicBezierSegment
-                    Point1="5.2000011920926,22.5333336777157"
-                    Point2="9.2000011920926,22.5333336777157"
-                    Point3="9.2000011920926,26.5333336777157" />
-                  <mssgle:LineSegment
-                    End="9.2000011920926,37.5666673554314" />
+                    End="0,71.3666676240497" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

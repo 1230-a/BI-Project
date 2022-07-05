@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Projet BI Nana Anicet</Name>
-    <LastWriteTime>2022-07-01T06:51:27.7950347Z</LastWriteTime>
+    <LastWriteTime>2022-07-05T16:22:38.1982083Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -23,27 +23,17 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>STA_LookUp_Call_Types.dtsx</Name>
-      <LastWriteTime>2022-07-01T06:53:12.8683611Z</LastWriteTime>
+      <LastWriteTime>2022-07-01T15:17:25.0884078Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>STA_Data2018.dtsx</Name>
-      <LastWriteTime>2022-07-01T06:53:22.4043228Z</LastWriteTime>
+      <Name>STA_Data.dtsx</Name>
+      <LastWriteTime>2022-07-04T16:36:01.2962326Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>STA_Data2019.dtsx</Name>
-      <LastWriteTime>2022-07-01T06:53:24.662071Z</LastWriteTime>
-      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
-    </ProjectBuildItemInfo>
-    <ProjectBuildItemInfo>
-      <Name>STA_Data2020.dtsx</Name>
-      <LastWriteTime>2022-07-01T06:53:19.642792Z</LastWriteTime>
-      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
-    </ProjectBuildItemInfo>
-    <ProjectBuildItemInfo>
-      <Name>STA_Data2021.dtsx</Name>
-      <LastWriteTime>2022-07-01T06:51:12.1437847Z</LastWriteTime>
+      <Name>ODS_CallCharges.dtsx</Name>
+      <LastWriteTime>2022-07-05T16:27:07.0806396Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

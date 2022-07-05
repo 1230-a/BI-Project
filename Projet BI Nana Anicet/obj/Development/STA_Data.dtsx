@@ -1,0 +1,919 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/4/2022 5:58:48 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-FV40EEG"
+  DTS:CreatorName="DESKTOP-FV40EEG\Nana"
+  DTS:DTSID="{26979B87-A056-45D1-9B67-0C38F3BD008D}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.521.0"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{F744E6D6-F386-4D09-A3A3-9332BEB7BE9A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DataFiles_CM]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{4CCCC049-C05A-4BCE-9B4C-72C086C5EDCD}"
+      DTS:ObjectName="DataFiles_CM">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::FolderPath]+"\\" + @[User::FilePath]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1036"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\3ème année Hexagone\3BI\Projet\Data\Calls data\">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ï»¿CallTimestamp"
+              DTS:DTSID="{76015529-9190-4A99-A531-18893466D438}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Call Type"
+              DTS:DTSID="{9C0268AF-8883-4FEA-98CE-AF058DD1039F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmployeeID"
+              DTS:DTSID="{7DBA519B-8A0D-462B-92EA-F5DE0DC8F74F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CallDuration"
+              DTS:DTSID="{0F9985F9-0ADD-49D2-8D81-25D63391CD77}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="WaitTime"
+              DTS:DTSID="{2A3ABE13-70C7-4B5A-979E-C3AD018F9566}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CallAbandoned"
+              DTS:DTSID="{4FC0B312-1F4F-43E7-9FF8-24F001DCD002}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3604442E-AF60-4F54-A022-F8975F307283}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FilePath">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5CA2546C-0FAE-40C3-BD3B-410F341C1AD1}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FolderPath">
+      <DTS:VariableValue
+        DTS:DataType="8">D:\3ème année Hexagone\3BI\Projet\Data\Calls data</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\FELC - Load into STA Data"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Conteneur de boucles Foreach"
+      DTS:DTSID="{B33DE157-0480-4E2E-8694-1B72173E31CF}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FELC - Load into STA Data">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{6C689F82-0F8B-462E-969D-5306981017DB}"
+        DTS:ObjectName="{6C689F82-0F8B-462E-969D-5306981017DB}">
+        <DTS:PropertyExpression
+          DTS:Name="Directory">@[User::FolderPath]</DTS:PropertyExpression>
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="D:\3ème année Hexagone\3BI\Projet\Data\Calls data" />
+            <FEFEProperty
+              FileSpec="*.*" />
+            <FEFEProperty
+              FileNameRetrievalType="1" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\FELC - Load into STA Data\DFT - Load into STA Data"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tâche de flux de données"
+          DTS:DTSID="{508FF32B-CBC2-4CD2-836B-9D0320CEAD0B}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:MaxErrorCount="10"
+          DTS:ObjectName="DFT - Load into STA Data"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Conversion de données;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+                  description="Conversion de données"
+                  name="DNCV - To Unicode"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Inputs[Entrée de conversion de données]"
+                      name="Entrée de conversion de données">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Inputs[Entrée de conversion de données].Columns[ï»¿CallTimestamp]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ï»¿CallTimestamp"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].Columns[ï»¿CallTimestamp]" />
+                        <inputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Inputs[Entrée de conversion de données].Columns[Call Type]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Call Type"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].Columns[Call Type]" />
+                        <inputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Inputs[Entrée de conversion de données].Columns[EmployeeID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="EmployeeID"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].Columns[EmployeeID]" />
+                        <inputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Inputs[Entrée de conversion de données].Columns[CallDuration]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CallDuration"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].Columns[CallDuration]" />
+                        <inputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Inputs[Entrée de conversion de données].Columns[WaitTime]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="WaitTime"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].Columns[WaitTime]" />
+                        <inputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Inputs[Entrée de conversion de données].Columns[CallAbandoned]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CallAbandoned"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].Columns[CallAbandoned]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Outputs[Sortie de conversion de données]"
+                      exclusionGroup="1"
+                      name="Sortie de conversion de données"
+                      synchronousInputId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Inputs[Entrée de conversion de données]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Outputs[Sortie de conversion de données].Columns[CallTimestamp]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Outputs[Sortie de conversion de données].Columns[CallTimestamp]"
+                          name="CallTimestamp"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
+                              name="SourceInputColumnLineageID">#{Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].Columns[ï»¿CallTimestamp]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Outputs[Sortie de conversion de données].Columns[CallType]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Outputs[Sortie de conversion de données].Columns[CallType]"
+                          name="CallType"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
+                              name="SourceInputColumnLineageID">#{Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].Columns[Call Type]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Outputs[Sortie de conversion de données].Columns[EmployeeID_U]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Outputs[Sortie de conversion de données].Columns[EmployeeID_U]"
+                          name="EmployeeID_U"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
+                              name="SourceInputColumnLineageID">#{Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].Columns[EmployeeID]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Outputs[Sortie de conversion de données].Columns[CallDuration_U]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Outputs[Sortie de conversion de données].Columns[CallDuration_U]"
+                          name="CallDuration_U"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
+                              name="SourceInputColumnLineageID">#{Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].Columns[CallDuration]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Outputs[Sortie de conversion de données].Columns[WaitTime_U]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Outputs[Sortie de conversion de données].Columns[WaitTime_U]"
+                          name="WaitTime_U"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
+                              name="SourceInputColumnLineageID">#{Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].Columns[WaitTime]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Outputs[Sortie de conversion de données].Columns[CallAbandoned_U]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Outputs[Sortie de conversion de données].Columns[CallAbandoned_U]"
+                          name="CallAbandoned_U"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
+                              name="SourceInputColumnLineageID">#{Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].Columns[CallAbandoned]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Outputs[Sortie d'erreur de conversion de données]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Sortie d'erreur de conversion de données"
+                      synchronousInputId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Inputs[Entrée de conversion de données]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Outputs[Sortie d'erreur de conversion de données].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Source du fichier plat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+                  description="Source du fichier plat"
+                  localeId="1036"
+                  name="FF_SRC - Data"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Spécifie si les colonnes dont la longueur est zéro sont traitées comme des valeurs NULL."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Spécifie le nom d'une colonne de sortie contenant le nom du fichier. Si aucun nom n'est spécifié, aucune colonne de sortie contenant le nom du fichier ne sera générée."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DataFiles_CM]"
+                      connectionManagerRefId="Package.ConnectionManagers[DataFiles_CM]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat]"
+                      name="Sortie de source de fichier plat">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].Columns[ï»¿CallTimestamp]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].ExternalColumns[ï»¿CallTimestamp]"
+                          length="50"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].Columns[ï»¿CallTimestamp]"
+                          name="ï»¿CallTimestamp"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indique si les données sont au format binaire."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].Columns[Call Type]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].ExternalColumns[Call Type]"
+                          length="50"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].Columns[Call Type]"
+                          name="Call Type"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indique si les données sont au format binaire."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].Columns[EmployeeID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].ExternalColumns[EmployeeID]"
+                          length="50"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].Columns[EmployeeID]"
+                          name="EmployeeID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indique si les données sont au format binaire."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].Columns[CallDuration]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].ExternalColumns[CallDuration]"
+                          length="50"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].Columns[CallDuration]"
+                          name="CallDuration"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indique si les données sont au format binaire."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].Columns[WaitTime]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].ExternalColumns[WaitTime]"
+                          length="50"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].Columns[WaitTime]"
+                          name="WaitTime"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indique si les données sont au format binaire."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].Columns[CallAbandoned]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].ExternalColumns[CallAbandoned]"
+                          length="50"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].Columns[CallAbandoned]"
+                          name="CallAbandoned"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indique si les données sont au format binaire."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].ExternalColumns[ï»¿CallTimestamp]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ï»¿CallTimestamp" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].ExternalColumns[Call Type]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Call Type" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].ExternalColumns[EmployeeID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="EmployeeID" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].ExternalColumns[CallDuration]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CallDuration" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].ExternalColumns[WaitTime]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="WaitTime" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat].ExternalColumns[CallAbandoned]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CallAbandoned" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie d'erreur de source de fichier plat]"
+                      isErrorOut="true"
+                      name="Sortie d'erreur de source de fichier plat">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Colonne de sortie d'erreur de source de fichier plat"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                          name="Colonne de sortie d'erreur de source de fichier plat" />
+                        <outputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+                  description="Destination OLE DB"
+                  name="OLE_DST - STA Data"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                      name="OpenRowset">[dbo].[Data]</property>
+                    <property
+                      dataType="System.String"
+                      description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Commande SQL à exécuter."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Spécifie le mode utilisé pour accéder à la base de données."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data.Connections[OleDbConnection]"
+                      connectionManagerID="{0074BEC4-D87B-4EF4-B5A5-F2F090B2E7BA}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[STA]"
+                      description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data.Inputs[Entrée de destination OLE DB]"
+                      errorOrTruncationOperation="Insérer"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrée de destination OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data.Inputs[Entrée de destination OLE DB].Columns[CallTimestamp]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="CallTimestamp"
+                          externalMetadataColumnId="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data.Inputs[Entrée de destination OLE DB].ExternalColumns[CallTimestamp]"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Outputs[Sortie de conversion de données].Columns[CallTimestamp]" />
+                        <inputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data.Inputs[Entrée de destination OLE DB].Columns[CallType]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="CallType"
+                          externalMetadataColumnId="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data.Inputs[Entrée de destination OLE DB].ExternalColumns[CallType]"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Outputs[Sortie de conversion de données].Columns[CallType]" />
+                        <inputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data.Inputs[Entrée de destination OLE DB].Columns[EmployeeID_U]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="EmployeeID_U"
+                          externalMetadataColumnId="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data.Inputs[Entrée de destination OLE DB].ExternalColumns[EmployeeID]"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Outputs[Sortie de conversion de données].Columns[EmployeeID_U]" />
+                        <inputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data.Inputs[Entrée de destination OLE DB].Columns[CallDuration_U]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="CallDuration_U"
+                          externalMetadataColumnId="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data.Inputs[Entrée de destination OLE DB].ExternalColumns[CallDuration]"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Outputs[Sortie de conversion de données].Columns[CallDuration_U]" />
+                        <inputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data.Inputs[Entrée de destination OLE DB].Columns[WaitTime_U]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="WaitTime_U"
+                          externalMetadataColumnId="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data.Inputs[Entrée de destination OLE DB].ExternalColumns[WaitTime]"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Outputs[Sortie de conversion de données].Columns[WaitTime_U]" />
+                        <inputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data.Inputs[Entrée de destination OLE DB].Columns[CallAbandoned_U]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="CallAbandoned_U"
+                          externalMetadataColumnId="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data.Inputs[Entrée de destination OLE DB].ExternalColumns[CallAbandoned]"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Outputs[Sortie de conversion de données].Columns[CallAbandoned_U]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data.Inputs[Entrée de destination OLE DB].ExternalColumns[CallTimestamp]"
+                          dataType="wstr"
+                          length="50"
+                          name="CallTimestamp" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data.Inputs[Entrée de destination OLE DB].ExternalColumns[CallType]"
+                          dataType="wstr"
+                          length="50"
+                          name="CallType" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data.Inputs[Entrée de destination OLE DB].ExternalColumns[EmployeeID]"
+                          dataType="wstr"
+                          length="50"
+                          name="EmployeeID" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data.Inputs[Entrée de destination OLE DB].ExternalColumns[CallDuration]"
+                          dataType="wstr"
+                          length="50"
+                          name="CallDuration" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data.Inputs[Entrée de destination OLE DB].ExternalColumns[WaitTime]"
+                          dataType="wstr"
+                          length="50"
+                          name="WaitTime" />
+                        <externalMetadataColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data.Inputs[Entrée de destination OLE DB].ExternalColumns[CallAbandoned]"
+                          dataType="wstr"
+                          length="50"
+                          name="CallAbandoned" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data.Outputs[Sortie d'erreur de destination OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Sortie d'erreur de destination OLE DB"
+                      synchronousInputId="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data.Inputs[Entrée de destination OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\FELC - Load into STA Data\DFT - Load into STA Data.Paths[Sortie de conversion de données]"
+                  endId="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data.Inputs[Entrée de destination OLE DB]"
+                  name="Sortie de conversion de données"
+                  startId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Outputs[Sortie de conversion de données]" />
+                <path
+                  refId="Package\FELC - Load into STA Data\DFT - Load into STA Data.Paths[Sortie de source de fichier plat]"
+                  endId="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode.Inputs[Entrée de conversion de données]"
+                  name="Sortie de source de fichier plat"
+                  startId="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data.Outputs[Sortie de source de fichier plat]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{065C7D48-BDD5-45CD-ADDD-21F4935C8206}"
+          DTS:ObjectName="{065C7D48-BDD5-45CD-ADDD-21F4935C8206}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::FilePath" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="198.4,41.6"
+          Id="Package\FELC - Load into STA Data\DFT - Load into STA Data"
+          TopLeft="76.9333109484788,31.000001467069" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="348.8,255.2"
+          Size="348.8,298.4"
+          Id="Package\FELC - Load into STA Data"
+          TopLeft="486.666647328272,110.066667541398" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\FELC - Load into STA Data\DFT - Load into STA Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data"
+          TopLeft="264.999989469847,50.2666670661502" />
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data"
+          TopLeft="250.833323366113,306.800002438228" />
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode"
+          TopLeft="259.166656368309,178.533334752189" />
+        <EdgeLayout
+          Id="Package\FELC - Load into STA Data\DFT - Load into STA Data.Paths[Sortie de source de fichier plat]"
+          TopLeft="341.883322919078,91.8666670661502">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,86.6666676860386"
+              Start="0,0"
+              End="0,79.1666676860386">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,79.1666676860386" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FELC - Load into STA Data\DFT - Load into STA Data.Paths[Sortie de conversion de données]"
+          TopLeft="342.399989867211,220.133334752189">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,86.6666676860388"
+              Start="0,0"
+              End="0,79.1666676860388">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,79.1666676860388" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
