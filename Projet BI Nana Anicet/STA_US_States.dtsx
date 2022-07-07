@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{58E4C571-777D-47A5-956D-11CB57F68B90}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{33AF8D1F-D42B-4802-AAE2-2C3EFC079D1F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\3ème année Hexagone\3BI\Projet\US States.xls;Extended Properties=&quot;Excel 8.0;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\3ème année Hexagone\3BI\Projet\US States.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -38,6 +38,7 @@
       DTS:DTSID="{6CDBDFBE-1B4B-4977-834B-78C25F10ECAB}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
+      DTS:MaxErrorCount="10"
       DTS:ObjectName="DFT - Load into STA US States"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
@@ -364,13 +365,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="176,41.6"
-          Id="Package\DFT - Load into STA US States\EX_SRC - US States"
-          TopLeft="669.166640076373,44.20000035127" />
-        <NodeLayout
           Size="204.8,41.6"
           Id="Package\DFT - Load into STA US States\OLE_DST - STA US States"
           TopLeft="661.666640374397,172.466668037309" />
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\DFT - Load into STA US States\EX_SRC - US States"
+          TopLeft="669.166640076373,44.20000035127" />
         <EdgeLayout
           Id="Package\DFT - Load into STA US States.Paths[Sortie de source Excel]"
           TopLeft="760.616640225385,85.8000003512701">

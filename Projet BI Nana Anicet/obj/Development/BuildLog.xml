@@ -2,18 +2,18 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Projet BI Nana Anicet</Name>
-    <LastWriteTime>2022-07-05T16:22:38.1982083Z</LastWriteTime>
+    <LastWriteTime>2022-07-06T17:23:53.562873Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>STA_CallCharges.dtsx</Name>
-      <LastWriteTime>2022-07-01T06:53:16.7643646Z</LastWriteTime>
+      <LastWriteTime>2022-07-07T16:49:56.7987498Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>STA_US_States.dtsx</Name>
-      <LastWriteTime>2022-07-01T06:53:51.4466859Z</LastWriteTime>
+      <LastWriteTime>2022-07-06T16:34:22.9783317Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -28,12 +28,17 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>STA_Data.dtsx</Name>
-      <LastWriteTime>2022-07-04T16:36:01.2962326Z</LastWriteTime>
+      <LastWriteTime>2022-07-07T15:29:14.2378672Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>ODS_CallCharges.dtsx</Name>
-      <LastWriteTime>2022-07-05T16:27:07.0806396Z</LastWriteTime>
+      <LastWriteTime>2022-07-07T17:29:51.3192444Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Package1.dtsx</Name>
+      <LastWriteTime>2022-07-06T17:34:27.1510569Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

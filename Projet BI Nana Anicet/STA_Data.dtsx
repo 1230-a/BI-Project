@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{F744E6D6-F386-4D09-A3A3-9332BEB7BE9A}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{F761BC06-D950-4FF9-B239-654315996B2E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -844,31 +844,31 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data"
-          TopLeft="264.999989469847,50.2666670661502" />
-        <NodeLayout
           Size="180,41.6"
           Id="Package\FELC - Load into STA Data\DFT - Load into STA Data\OLE_DST - STA Data"
-          TopLeft="250.833323366113,306.800002438228" />
+          TopLeft="250.833323366113,199.333334917493" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\FELC - Load into STA Data\DFT - Load into STA Data\FF_SRC - Data"
+          TopLeft="268.333322670726,52.0000004132589" />
         <NodeLayout
           Size="169.6,41.6"
           Id="Package\FELC - Load into STA Data\DFT - Load into STA Data\DNCV - To Unicode"
-          TopLeft="259.166656368309,178.533334752189" />
+          TopLeft="260.833322968748,129.133334359593" />
         <EdgeLayout
           Id="Package\FELC - Load into STA Data\DFT - Load into STA Data.Paths[Sortie de source de fichier plat]"
-          TopLeft="341.883322919078,91.8666670661502">
+          TopLeft="344.383322819737,93.6000004132589">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,86.6666676860386"
+              EndConnector="0,35.5333339463342"
               Start="0,0"
-              End="0,79.1666676860386">
+              End="0,28.0333339463342">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,79.1666676860386" />
+                    End="0,28.0333339463342" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -879,18 +879,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\FELC - Load into STA Data\DFT - Load into STA Data.Paths[Sortie de conversion de données]"
-          TopLeft="342.399989867211,220.133334752189">
+          TopLeft="343.233323167431,170.733334359593">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,86.6666676860388"
+              EndConnector="0,28.6000005578999"
               Start="0,0"
-              End="0,79.1666676860388">
+              End="0,21.1000005578999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,79.1666676860388" />
+                    End="0,21.1000005578999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

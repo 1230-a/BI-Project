@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{A93CF13A-636D-4E59-B7D8-2BAF59DB8B5B}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{9DC75068-988E-4956-B1F8-54B5A8421AF3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -74,13 +74,13 @@
                   synchronousInputId="Package\DFT - Load into STA Call Charges\DNCV - to Unicode.Inputs[Entrée de conversion de données]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - Load into STA Call Charges\DNCV - to Unicode.Outputs[Sortie de conversion de données].Columns[Call Type Key_Uni]"
+                      refId="Package\DFT - Load into STA Call Charges\DNCV - to Unicode.Outputs[Sortie de conversion de données].Columns[CallTypeKey_Uni]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="50"
-                      lineageId="Package\DFT - Load into STA Call Charges\DNCV - to Unicode.Outputs[Sortie de conversion de données].Columns[Call Type Key_Uni]"
-                      name="Call Type Key_Uni"
+                      lineageId="Package\DFT - Load into STA Call Charges\DNCV - to Unicode.Outputs[Sortie de conversion de données].Columns[CallTypeKey_Uni]"
+                      name="CallTypeKey_Uni"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -397,13 +397,6 @@
                   name="Entrée de destination OLE DB">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT - Load into STA Call Charges\OLE_DST - STA Call Charges.Inputs[Entrée de destination OLE DB].Columns[Call Type ]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Call Type "
-                      externalMetadataColumnId="Package\DFT - Load into STA Call Charges\OLE_DST - STA Call Charges.Inputs[Entrée de destination OLE DB].ExternalColumns[Call Type ]"
-                      lineageId="Package\DFT - Load into STA Call Charges\EX_SRC -  Call Charges.Outputs[Sortie de source Excel].Columns[Call Type ]" />
-                    <inputColumn
                       refId="Package\DFT - Load into STA Call Charges\OLE_DST - STA Call Charges.Inputs[Entrée de destination OLE DB].Columns[Call Charges (2018)]"
                       cachedDataType="wstr"
                       cachedLength="255"
@@ -432,24 +425,22 @@
                       externalMetadataColumnId="Package\DFT - Load into STA Call Charges\OLE_DST - STA Call Charges.Inputs[Entrée de destination OLE DB].ExternalColumns[Call Charges (2021)]"
                       lineageId="Package\DFT - Load into STA Call Charges\EX_SRC -  Call Charges.Outputs[Sortie de source Excel].Columns[Call Charges (2021)]" />
                     <inputColumn
-                      refId="Package\DFT - Load into STA Call Charges\OLE_DST - STA Call Charges.Inputs[Entrée de destination OLE DB].Columns[Call Type Key_Uni]"
+                      refId="Package\DFT - Load into STA Call Charges\OLE_DST - STA Call Charges.Inputs[Entrée de destination OLE DB].Columns[CallTypeKey_Uni]"
                       cachedDataType="wstr"
                       cachedLength="50"
-                      cachedName="Call Type Key_Uni"
-                      externalMetadataColumnId="Package\DFT - Load into STA Call Charges\OLE_DST - STA Call Charges.Inputs[Entrée de destination OLE DB].ExternalColumns[Call Type Key]"
-                      lineageId="Package\DFT - Load into STA Call Charges\DNCV - to Unicode.Outputs[Sortie de conversion de données].Columns[Call Type Key_Uni]" />
+                      cachedName="CallTypeKey_Uni"
+                      externalMetadataColumnId="Package\DFT - Load into STA Call Charges\OLE_DST - STA Call Charges.Inputs[Entrée de destination OLE DB].ExternalColumns[CallTypeKey]"
+                      lineageId="Package\DFT - Load into STA Call Charges\DNCV - to Unicode.Outputs[Sortie de conversion de données].Columns[CallTypeKey_Uni]" />
+                    <inputColumn
+                      refId="Package\DFT - Load into STA Call Charges\OLE_DST - STA Call Charges.Inputs[Entrée de destination OLE DB].Columns[Call Type ]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Call Type "
+                      externalMetadataColumnId="Package\DFT - Load into STA Call Charges\OLE_DST - STA Call Charges.Inputs[Entrée de destination OLE DB].ExternalColumns[CallType ]"
+                      lineageId="Package\DFT - Load into STA Call Charges\EX_SRC -  Call Charges.Outputs[Sortie de source Excel].Columns[Call Type ]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\DFT - Load into STA Call Charges\OLE_DST - STA Call Charges.Inputs[Entrée de destination OLE DB].ExternalColumns[Call Type Key]"
-                      dataType="r8"
-                      name="Call Type Key" />
-                    <externalMetadataColumn
-                      refId="Package\DFT - Load into STA Call Charges\OLE_DST - STA Call Charges.Inputs[Entrée de destination OLE DB].ExternalColumns[Call Type ]"
-                      dataType="wstr"
-                      length="255"
-                      name="Call Type " />
                     <externalMetadataColumn
                       refId="Package\DFT - Load into STA Call Charges\OLE_DST - STA Call Charges.Inputs[Entrée de destination OLE DB].ExternalColumns[Call Charges (2018)]"
                       dataType="wstr"
@@ -470,6 +461,16 @@
                       dataType="wstr"
                       length="255"
                       name="Call Charges (2021)" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load into STA Call Charges\OLE_DST - STA Call Charges.Inputs[Entrée de destination OLE DB].ExternalColumns[CallTypeKey]"
+                      dataType="wstr"
+                      length="50"
+                      name="CallTypeKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load into STA Call Charges\OLE_DST - STA Call Charges.Inputs[Entrée de destination OLE DB].ExternalColumns[CallType ]"
+                      dataType="wstr"
+                      length="255"
+                      name="CallType " />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -544,27 +545,27 @@
           Id="Package\DFT - Load into STA Call Charges\EX_SRC -  Call Charges"
           TopLeft="645.833307670223,32.0666669215097" />
         <NodeLayout
-          Size="166.4,41.6"
-          Id="Package\DFT - Load into STA Call Charges\DNCV - to Unicode"
-          TopLeft="656.666640573079,137.800001095136" />
-        <NodeLayout
           Size="217.6,41.6"
           Id="Package\DFT - Load into STA Call Charges\OLE_DST - STA Call Charges"
           TopLeft="631.66664156649,235.733335206774" />
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\DFT - Load into STA Call Charges\DNCV - to Unicode"
+          TopLeft="656.666640573079,141.266667789353" />
         <EdgeLayout
-          Id="Package\DFT - Load into STA Call Charges.Paths[Sortie de source Excel]"
-          TopLeft="740.849974121651,73.6666669215097">
+          Id="Package\DFT - Load into STA Call Charges.Paths[Sortie de conversion de données]"
+          TopLeft="740.166641069784,182.866667789353">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,64.1333341736263"
+              EndConnector="0,52.8666674174207"
               Start="0,0"
-              End="0,56.6333341736263">
+              End="0,45.3666674174207">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,56.6333341736263" />
+                    End="0,45.3666674174207" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -574,19 +575,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - Load into STA Call Charges.Paths[Sortie de conversion de données]"
-          TopLeft="740.166641069784,179.400001095136">
+          Id="Package\DFT - Load into STA Call Charges.Paths[Sortie de source Excel]"
+          TopLeft="740.849974121651,73.6666669215097">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,56.3333341116376"
+              EndConnector="0,67.6000008678435"
               Start="0,0"
-              End="0,48.8333341116376">
+              End="0,60.1000008678435">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.8333341116376" />
+                    End="0,60.1000008678435" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
