@@ -50,3 +50,14 @@ CREATE TABLE [Technical_rejects] (
     [Reject_message] nvarchar(1000)
 )
 GO
+
+
+Use Proj_ODS
+CREATE TABLE [CallCharges] (
+    [Year] int,
+    [CallCharges] float,
+    [CallTypeKey] smallint,
+    [CallType] nvarchar(255),
+  
+)
+GO

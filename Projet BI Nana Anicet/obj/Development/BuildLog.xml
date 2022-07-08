@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Projet BI Nana Anicet</Name>
-    <LastWriteTime>2022-07-06T17:23:53.562873Z</LastWriteTime>
+    <LastWriteTime>2022-07-08T16:32:13.6223476Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -33,7 +33,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>ODS_CallCharges.dtsx</Name>
-      <LastWriteTime>2022-07-07T22:12:20.7129855Z</LastWriteTime>
+      <LastWriteTime>2022-07-08T16:32:13.5893452Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
