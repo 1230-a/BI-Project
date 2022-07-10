@@ -61,3 +61,30 @@ CREATE TABLE [CallCharges] (
   
 )
 GO
+
+CREATE TABLE [dbo].[Calls](
+	[CallType_int] [smallint] NULL,
+	[CallDuration_Int] [smallint] NULL,
+	[WaitTime_Int] [int] NULL,
+	[SLA_Uni] [nvarchar](50) NULL,
+	[CallDate_Date] [datetime] NULL,
+	[CallTime_Hour] [datetime] NULL,
+	[CallCharges] [float] NULL,
+	[ChargeByCall] [float] NULL,
+	[CallAbandoned] [nvarchar](50) NULL
+) ON [PRIMARY]
+GO
+
+
+Use Proj_DWH
+CREATE TABLE [dbo].[DimEmployees](
+	[EmployeeKey][int] identity (1,1) primary key not null,
+	[EmployeeID_30] [nvarchar](30) NULL,
+	[EmployeeName_50] [nvarchar](50) NULL,
+	[SiteCD] [nvarchar](10) NULL,
+	[SiteCity_30] [nvarchar](30) NULL,
+	[SiteRegion_30] [nvarchar](30) NULL,
+	[SiteState_30] [nvarchar](30) NULL
+) ON [PRIMARY]
+GO
+		

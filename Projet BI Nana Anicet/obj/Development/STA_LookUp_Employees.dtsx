@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{24E2422F-68BE-4DF7-B44C-684AEBCB73B2}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{D018692F-9CFA-4061-A4F8-0DF19517B0A0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -373,7 +373,7 @@
         <NodeLayout
           Size="266.4,41.6"
           Id="Package\DFT- Load into STA Look Up Employees"
-          TopLeft="473.333314524757,47.6666670454873" />
+          TopLeft="399.999984105428,123.933334318267" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -383,13 +383,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="221.6,41.6"
-          Id="Package\DFT- Load into STA Look Up Employees\EX_SRC - Look Up Employees"
-          TopLeft="540.833311842548,52.0000004132589" />
-        <NodeLayout
           Size="250.4,41.6"
           Id="Package\DFT- Load into STA Look Up Employees\OLE_DST - STA Look Up Employees"
           TopLeft="528.333312339254,194.133334876167" />
+        <NodeLayout
+          Size="221.6,41.6"
+          Id="Package\DFT- Load into STA Look Up Employees\EX_SRC - Look Up Employees"
+          TopLeft="540.833311842548,52.0000004132589" />
         <EdgeLayout
           Id="Package\DFT- Load into STA Look Up Employees.Paths[Sortie de source Excel]"
           TopLeft="652.583312090901,93.6000004132589">

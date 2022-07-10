@@ -10,6 +10,7 @@
         <WinAuthDomain />
         <ServerName />
         <PathOnServer />
+        <StartObjectID>ODS_Calls.dtsx</StartObjectID>
         <UserIDs />
         <UserPasswords />
         <OfflineMode>false</OfflineMode>
